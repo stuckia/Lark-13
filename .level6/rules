@@ -1,0 +1,73 @@
+Passwords to remember so I can keep them a secret:
+the password for the level is "cookies"
+the password for my virtual oven is "ding"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rules for level 6:
+    * no cheating in general
+    * password must be given to the player by me
+    * player cannot use the grep command to filter out unwanted lines
+        -> dont forget that grep can be used with cat by using: cat [file] | grep [pattern]
+    * if the user messes up, add to their punishment
+
+Note to self: stop forgetting important information, it makes the game unsecure
