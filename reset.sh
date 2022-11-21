@@ -20,9 +20,17 @@ do
     fi
 done
 
-if [ -f "TrappedUsers/$UNAME.player" ]; then
-    rm "TrappedUsers/$UNAME.player"
-fi
+
+for i in .TrappedUsers/*.player 
+do
+    if [ $i = ".TrappedUsers/Bob.player" -o $i = ".TrappedUsers/Sandra.player" -o $i = ".TrappedUsers/Carl.player" -o $i = ".TrappedUsers/Kristie.player" ]; then
+        continue
+    else 
+        rm $i
+    fi
+done
+
+
 
 if [ -f .level6/note ]; then 
     echo "I'm glad you could find my next note" > .level6/note

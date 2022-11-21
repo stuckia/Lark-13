@@ -60,7 +60,7 @@ Are you ready to play?
 
 read -p "> " -n 1
 
-while [ "$REPLY" -ne "1" -a "$REPLY" -ne "2" ]
+while [ $REPLY -ne 1 -a $REPLY -ne 2 ]
 do
     echo ""
     echo "Sorry bud, that's not an option"
@@ -98,7 +98,7 @@ do
         echo "~: Whenever you need to see what files are avaliable, try typing: ls"
         echo "~: In order to read my notes, try typing: cat [file name]"
         $REPLY
-    elif [ "$REPLY" = "yes" ]; then
+    else 
         game
         echo "~: I cant believe you're still playing"
         echo "~: In case you missed it, you'll be here forever unless you type exit"
