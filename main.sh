@@ -1,5 +1,25 @@
 #!/bin/bash
 
+# consider this to make sure user cannot cd out of game
+# game will only ever be one folder deep, so cd .. will bring them back to main game
+# also add a check if they do cd in the main game to not do anything
+cd() { 
+    if [ $# -eq 0 -o "$1" = ".." ]; then 
+        if [ $(basename `pwd`) = "Lark-13" ]; then
+            return
+        fi
+    fi
+
+    if [ $# -eq 0 ]; then
+        cd ..
+    else
+        pushd $1 1>/dev/null 
+    fi
+}
+
+exit() {
+    echo "Great try, but you cant exit out of the game that easily"
+}
 
 initFiles() {
     
@@ -97,7 +117,7 @@ do
         echo "~: I can only help you through text files, so keep a look out for any files with the name: note"
         echo "~: Whenever you need to see what files are avaliable, try typing: ls"
         echo "~: In order to read my notes, try typing: cat [file name]"
-        $REPLY
+        break
     else 
         game
         echo "~: I cant believe you're still playing"

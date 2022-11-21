@@ -10,12 +10,12 @@ while :
 do
     read -p "Enter the password: "
     if [ "$REPLY" = "exit" ]; then
-        $REPLY
+        return
     elif [ $REPLY = "cookies" ]; then
         # in here change the main note to something else
         # maybe chage the name of that note to indicate its updated
         if [ -f note ]; then 
-            echo "Dont forget: you can run any .sh file by typing ./[filename]" > note
+            echo "Dont forget: you can run any .sh file by typing: . [filename]" > note
         fi
         
         echo "Level has been overwritten. Congratulations, you won level 6" 
