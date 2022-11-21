@@ -32,3 +32,7 @@ if [ ! -f .level6/note ]; then
     echo >> .level6/note
     echo "Dont forget: you can run any .sh file by typing ./[filename]" >> .level6/note
 fi
+
+if [ -f .level2/note ]; then 
+    rm .level2/note
+fi

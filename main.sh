@@ -25,6 +25,14 @@ initFiles() {
     fi
 }
 
+game() {
+    read -p "Pick a number: "
+    for i in {1..4}
+    do
+        read -p "Whoops, try again: "
+    done
+}
+
 ./reset.sh
 
 # make part of the puzzle be that the user needs to find their own file and delete it
@@ -66,16 +74,14 @@ My name's Game, and I'll be your host
 
 For our first game: Guess the magic number
 "
-for i in {1..4}
-do
-    read -p "Whoops, try again: "
-done
+
+game
 
 echo "~: Psst, this is boring isnt it?"
-echo "~: I can try and help break you out, otherwise you\'ll be stuck here forever like me"
+echo "~: I can try and help break you out, otherwise you'll be stuck here forever like me"
 echo "To meet me outside, type: exit"
 
-sleep 5
+sleep 7
 
 clear
 
@@ -92,6 +98,10 @@ do
         echo "~: Whenever you need to see what files are avaliable, try typing: ls"
         echo "~: In order to read my notes, try typing: cat [file name]"
         $REPLY
+    elif [ "$REPLY" = "yes" ]; then
+        game
+        echo "~: I cant believe you're still playing"
+        echo "~: In case you missed it, you'll be here forever unless you type exit"
     fi
 done
 
