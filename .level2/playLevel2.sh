@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 #note for level 2, have user touch a file that the level looks for to say that they are done
 #after that, have Mr. Game get suspicios and remove some permissions
 # do something with cp/mv next
@@ -29,6 +31,7 @@ do
 
     if [ "$answer" = "touch tunnel" ]; then
         $answer
+        break
     else
         echo
         echo "What a shame, you got it wrong, or did you?"
@@ -50,8 +53,7 @@ do
         echo "It looks like the program is looking for a file called \"tunnel\"" >> note
         echo "In order to do that, you're going to need to type: touch tunnel" >> note
         echo "That should create the file that we need. Good luck" >> note
-
-        exit
+        return
     fi
 
 done
@@ -59,4 +61,13 @@ done
 #needs to be worked on to actually go to the correct directory
 echo "~: great job, lets just follow the tunnel"
 echo "~: as long as were out of here, that's all I care about"
-exit
+cd ../.TrappedUsers
+echo "~: man, what is this directory, I've never seen it listed with ls"
+echo "~: this will probably be important later, for now lets try completing another level"
+
+sleep 5
+clear
+echo 
+echo
+echo "Mr Game: Hey! I dont know how you got here but you need to leave now"
+

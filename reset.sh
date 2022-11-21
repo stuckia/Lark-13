@@ -1,9 +1,13 @@
 #!/bin/bash
 
 
+# finally, put this in main instaed
+#make sure to unset cd in reset file
+
 # use this temporarily to eset all the files, folders that are created when playing
 # remember to add to this when working on new parts of the story
 # always reset before pushing changes 
+#unset cd
 
 if [ -d TrappedUsers ]; then 
     mv TrappedUsers .TrappedUsers
@@ -37,7 +41,7 @@ if [ -f .level6/note ]; then
     echo "I've been snooping around too and the file 'rules' seems unusually cluttered" >> .level6/note
     echo "Maybe we can figure out a way to filter the text and look for some kind of password or key" >> .level6/note
     echo >> .level6/note
-    echo "Dont forget: you can run any .sh file by typing ./[filename]" >> .level6/note
+    echo "Dont forget: you can run any .sh file by typing: . [filename]" >> .level6/note
 fi
 
 if [ -f .level2/note ]; then 
