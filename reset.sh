@@ -24,9 +24,8 @@ if [ -f "TrappedUsers/$UNAME.player" ]; then
     rm "TrappedUsers/$UNAME.player"
 fi
 
-if [ ! -f .level6/note ]; then 
-    touch .level6/note
-    echo "I'm glad you could find my next note" >> .level6/note
+if [ -f .level6/note ]; then 
+    echo "I'm glad you could find my next note" > .level6/note
     echo "I've been snooping around too and the file 'rules' seems unusually cluttered" >> .level6/note
     echo "Maybe we can figure out a way to filter the text and look for some kind of password or key" >> .level6/note
     echo >> .level6/note
@@ -35,4 +34,8 @@ fi
 
 if [ -f .level2/note ]; then 
     rm .level2/note
+fi
+
+if [ -f .level2/tunnel ]; then
+    rm .level2/tunnel
 fi
