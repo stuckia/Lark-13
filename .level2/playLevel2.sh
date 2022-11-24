@@ -45,29 +45,28 @@ do
     if [ $NUMLIVES -eq 1 ]; then
         echo 
         echo
-        echo "~: this is getting a little too close for comfort"
-        echo "~: I'm kicking you out of the level before it's too late"
-        echo "~: make sure you read my note before you try that again" 
+        echo -e "\e[91m~: this is getting a little too close for comfort"
+        echo -e "\e[91m~: I'm kicking you out of the level before it's too late"
+        echo -e "\e[91m~: make sure you read my note before you try that again" 
 
-        echo "Ok, I've looked at the code and I found something that can help us" > note
-        echo "It looks like the program is looking for a file called \"tunnel\"" >> note
-        echo "In order to do that, you're going to need to type: touch tunnel" >> note
-        echo "That should create the file that we need. Good luck" >> note
-        return
+        echo -e "\e[91m~:Ok, I've looked at the code and I found something that can help us" > note
+        echo -e "\e[91m~:It looks like the program is looking for a file called \"tunnel\"" >> note
+        echo -e "\e[91m~:In order to do that, you're going to need to type: touch tunnel" >> note
+        echo -e "\e[91m~:That should create the file that we need. Good luck" >> note
     fi
 
 done
 
 #needs to be worked on to actually go to the correct directory
-echo "~: great job, lets just follow the tunnel"
-echo "~: as long as were out of here, that's all I care about"
+echo -e "\e[91m~: great job, lets just follow the tunnel"
+echo -e "\e[91m~: as long as were out of here, that's all I care about"
 cd ../.TrappedUsers
-echo "~: man, what is this directory, I've never seen it listed with ls"
-echo "~: this will probably be important later, for now lets try completing another level"
+echo -e "\e[91m~: man, what is this directory, I've never seen it listed with ls"
+echo -e "\e[91m~: this will probably be important later, for now lets try completing another level"
 
-sleep 5
+sleep 5 # SLEEP CANNOT BE MORE THAN ONE SECOND, NEED TO CHANGE THIS
 clear
 echo 
 echo
-echo "Mr Game: Hey! I dont know how you got here but you need to leave now"
+echo -e "\e[39mMr Game: Hey! I dont know how you got here but you need to leave now"
 

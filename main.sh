@@ -26,11 +26,11 @@ initFiles() {
     if [ ! -f note ]; then
         touch note
 
-        echo "Glad you can find this, you're already doing better than Sandra ever did." >> note
-        echo "Anyway, let's snoop around before Mr. Game knows what's going on" >> note
-        echo "To look in different folders, try typing: cd [folder name]" >> note
-        echo "If you want to come back out of a folder, type: cd .." >> note
-        echo "Now that you know the cd and ls commands, lets look around for a clue to get out of here" >> note
+        echo -e "\e[91m~: Glad you can find this, you're already doing better than Sandra ever did." >> note
+        echo -e "\e[91m~: Anyway, let's snoop around before Mr. Game knows what's going on" >> note
+        echo -e "\e[91m~: To look in different folders, try typing: cd [folder name]" >> note
+        echo -e "\e[91m~: If you want to come back out of a folder, type: cd .." >> note
+        echo -e "\e[91m~: Now that you know the cd and ls commands, lets look around for a clue to get out of here" >> note
     fi
 
     for i in {2..7}
@@ -97,15 +97,15 @@ For our first game: Guess the magic number
 
 game
 
-echo "~: Psst, this is boring isnt it?"
-echo "~: I can try and help break you out, otherwise you'll be stuck here forever like me"
-echo "To meet me outside, type: exit"
+echo -e "\e[91m~: Psst, this is boring isnt it?"
+echo -e "\e[91m~: I can try and help break you out, otherwise you'll be stuck here forever like me"
+echo -e "\e[91m~: To meet me outside, type: exit"
 
-sleep 7
+sleep 7 # SLEEP CAN ONLY BE 1 SECOND LONG SO WE NEED TO CHANGE THIS LINE
 
 clear
 
-echo "Sorry about that, must've been a glitch. Shall we continue?"
+echo -e "\e[39mSorry about that, must've been a glitch. Shall we continue?"
 
 while :
 do
@@ -113,15 +113,15 @@ do
 
     if [ "$REPLY" = "exit" ]; then
         initFiles
-        echo "~: Perfect; 'exit' can get you out of any shell script"
-        echo "~: I can only help you through text files, so keep a look out for any files with the name: note"
-        echo "~: Whenever you need to see what files are avaliable, try typing: ls"
-        echo "~: In order to read my notes, try typing: cat [file name]"
+        echo -e "\e[91m~: Perfect; 'exit' can get you out of any shell script"
+        echo -e "\e[91m~: I can only help you through text files, so keep a look out for any files with the name: note"
+        echo -e "\e[91m~: Whenever you need to see what files are avaliable, try typing: ls"
+        echo -e "\e[91m~: In order to read my notes, try typing: cat [file name]"
         break
     else 
         game
-        echo "~: I cant believe you're still playing"
-        echo "~: In case you missed it, you'll be here forever unless you type exit"
+        echo -e "\e[91m~: I cant believe you're still playing"
+        echo -e "\e[91m~: In case you missed it, you'll be here forever unless you type exit"
     fi
 done
 
