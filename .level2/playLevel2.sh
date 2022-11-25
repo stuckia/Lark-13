@@ -53,6 +53,7 @@ do
         echo -e "\e[91m~:It looks like the program is looking for a file called \"tunnel\"" >> note
         echo -e "\e[91m~:In order to do that, you're going to need to type: touch tunnel" >> note
         echo -e "\e[91m~:That should create the file that we need. Good luck" >> note
+        return
     fi
 
 done
@@ -69,4 +70,10 @@ clear
 echo 
 echo
 echo -e "\e[39mMr Game: Hey! I dont know how you got here but you need to leave now"
+echo 
+echo
+echo -e "\e[91m~: I think for now he's right, we can always come back here later"
+echo -e "\e[91m~: Lets cd to get back to the main folder"
+
+
 
