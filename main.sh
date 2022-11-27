@@ -101,10 +101,10 @@ echo -e "\e[91m~: Psst, this is boring isnt it?"
 echo -e "\e[91m~: I can try and help break you out, otherwise you'll be stuck here forever like me"
 echo -e "\e[91m~: To meet me outside, type: exit"
 
-sleep 7 # SLEEP CAN ONLY BE 1 SECOND LONG SO WE NEED TO CHANGE THIS LINE
+sleep 1
 
-clear
-
+echo
+echo
 echo -e "\e[39mSorry about that, must've been a glitch. Shall we continue?"
 
 while :
@@ -124,28 +124,6 @@ do
         echo -e "\e[91m~: In case you missed it, you'll be here forever unless you type exit"
     fi
 done
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -27,11 +27,13 @@ do
 
 done
 
+echo -e "\e[91m~: Great job, that's one level finished"
+echo -e "\e[91m~: In order to escape, you're going to need to \"finish\" all the levels"
+echo -e "\e[91m~: Trust me, the only way you can get out of here is by hacking each level"
+echo -e "\e[91m~: Let's try and find the next clue"
+
 initNextFiles
-echo -e "\e[91m~:~: great job, that's one level finished"
-echo -e "\e[91m~:~: in order to escape, you're going to need to \"finish\" all the levels"
-echo -e "\e[91m~:~: trust me, the only way you can get out of here is by hacking each level"
-echo -e "\e[91m~:~: lets try and find the next clue"
+
 
 
 
