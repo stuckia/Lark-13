@@ -51,3 +51,15 @@ fi
 if [ -f .level2/tunnel ]; then
     rm .level2/tunnel
 fi
+
+if [ -f .level4/key ]; then 
+    rm .level4/key
+fi
+
+if [ -f .level4/lock ]; then 
+    rm .level4/lock
+fi
+
+if [ -f .level4/riddle ]; then 
+    rm .level4/riddle
+fi
