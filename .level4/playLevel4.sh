@@ -1,12 +1,13 @@
 #!/bin/bash
 
 if [ -f "lock" -a -f "key" ]; then
-    rm lock
-    rm key
+    # dont rm the files since the player is going to need to play the level again
+    #rm lock
+    #rm key
     touch riddle
     chmod -r riddle
 
-    echo "I speak without a mouth and hear without ears" >> riddle
+    echo "I speak without a mouth and hear without ears" > riddle
     echo "I have no body but I come alive with wind" >> riddle
     echo "What am I?" >> riddle
     echo "echo" >> riddle
@@ -38,8 +39,9 @@ while :
 do
     echo "I speak without a mouth and hear without ears"
     echo "I have no body but I come alive with wind"
+    echo "What am I?"
     sleep 1
-    read -p "What am I?" answer
+    read -p "> " answer
     
     if [ "$answer" = "echo" ]; then
         echo
@@ -47,7 +49,7 @@ do
         echo "Congratulations, you passed!"
         echo "Level4 complete, level5 now unlocked"
         break
-    else if [ count = 3 ]; then
+    elif [ $count -eq 3 ]; then
         echo
         echo
         echo "~: I found the answer, let me help you out"
