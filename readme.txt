@@ -4,7 +4,7 @@ Welcome to LARK
 
 Name of game: Dungeons and Directories
 
-Developed by: Gregory Jans, put name here, put name here
+Developed by: Gregory Jans, Abigail Stucki, put name here
 
 Narrative: You, an unknowing user, are actively being trapped inside of a pretty boring game. Thankfully, an unknown ally is here to guide you as you try to cheat your way through, hack, and ultimately escape the game, all the while trying to avoid suspicion from the game's host: Mr Game. Learn basic UNIX commands from the notes left by your anonymous companion in order to snoop through files and directories, filter text, and even make your own files
 
