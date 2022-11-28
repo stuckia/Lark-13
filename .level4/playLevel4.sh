@@ -19,7 +19,7 @@ if [ -f "lock" -a -f "key" ]; then
     sleep 1
     echo
     echo
-    echo -e "~: Keep following the game while I tweak the level for you"
+    echo -e "\e[91m~: Keep following the game while I tweak the level for you"
     sleep 1
     echo
     echo
@@ -52,12 +52,12 @@ do
     elif [ $count -eq 3 ]; then
         echo
         echo
-        echo "~: I found the answer, let me help you out"
-        echo "~: It seems there is a file named riddle in the level4 folder"
-        echo "~: The file is locked right now, but maybe you can change the permissions to peek at the answer"
-        echo "~: Try using the following command to allow reading permissions: chmod +r [file]"
-        echo "~: I'll kick you out of the level so you can look at it"
-        echo "~: Remember that you can open the contents of the file using cat"
+        echo -e "\e[91m~: I found the answer, let me help you out"
+        echo -e "\e[91m~: It seems there is a file named riddle in the level4 folder"
+        echo -e "\e[91m~: The file is locked right now, but maybe you can change the permissions to peek at the answer"
+        echo -e "\e[91m~: Try using the following command to allow reading permissions: chmod +r [file]"
+        echo -e "\e[91m~: I'll kick you out of the level so you can look at it"
+        echo -e "\e[91m~: Remember that you can open the contents of the file using cat"
         break
     else
         echo "Sorry, that was incorrect"
@@ -70,3 +70,5 @@ do
     count=`expr $count + 1`
 
 done
+
+chmod +rx ../level5/playLevel5.sh

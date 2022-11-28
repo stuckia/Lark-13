@@ -7,6 +7,8 @@
 # do something with cp/mv next
 
 initNextFiles() {
+    chmod +rx ../level4/playLevel4.sh
+
     touch ../key
     echo "  XXXXXXXXXXXXXX" >> ../key
     echo "XX              XX" >> ../key
@@ -33,7 +35,7 @@ initNextFiles() {
     echo "  XXXXXXXXXXXXXX" >> ../level4/lock
     echo >> ../level4/lock
     echo "Move key into this folder to unlock the level" >> ../level4/lock
-    echo "mv [file] [folder]/[location]" >> ../level4/lock
+    echo "mv [file] [new folder destination]" >> ../level4/lock
 }
 
 echo "
@@ -67,18 +69,20 @@ do
         echo "What a shame, you got it wrong, or did you?"
         echo "Lucky for you I don't care, so looks like you lost a life"
         NUMLIVES=`expr $NUMLIVES - 1`
+        sleep 1
         echo "You now have $NUMLIVES lives left"
     fi
 
     
 
     if [ $NUMLIVES -eq 1 ]; then
+        sleep 1
         echo 
         echo
         echo -e "\e[91m~: This is getting a little too close for comfort"
         echo -e "\e[91m~: I'm kicking you out of the level before it's too late"
         echo -e "\e[91m~: Make sure you read my note before you restart the level" 
-        echo "Ok, I've looked at the level2 code and I found something that can help us" > note
+        echo "Ok, I've looked at the level2 code and I found something that can help us" >> note
         echo "It looks like the program is looking for a file called \"tunnel\"" >> note
         echo "In order to do that, you're going to need to type: touch tunnel" >> note
         echo "That should create the file that we need to pass level2. Good luck" >> note
@@ -87,21 +91,29 @@ do
 
 done
 
+sleep 1
+echo "Tunnel discovered"
+
 #needs to be worked on to actually go to the correct directory
-echo -e "\e[91m~: Great job, lets just follow the tunnel"
+sleep 1
+echo -e "\e[91m~: Great job, let's just follow the tunnel"
 echo -e "\e[91m~: As long as were out of here, that's all I care about"
 cd ../.TrappedUsers
+sleep 1
 echo -e "\e[91m~: Man, what is this directory, I've never seen it listed with ls"
-echo -e "\e[91m~: This will probably be important later, for now lets try completing another level"
+echo -e "\e[91m~: This will probably be important later, for now let's try completing another level"
 
-initNextFiles
-sleep 1 # SLEEP CANNOT BE MORE THAN ONE SECOND, NEED TO CHANGE THIS
+sleep 1
 echo 
 echo
 echo -e "\e[39mMr Game: Hey! I dont know how you got here but you need to leave now"
 echo 
 echo
+sleep 1
 echo -e "\e[91m~: I think for now he's right, we can always come back here later"
 echo -e "\e[91m~: Let's cd to get back to the main folder"
+echo
 echo -e "\e[91m~: I faintly recall the next level containing a lock"
-echo -e "\e[91m~: The key should be around the main folder somewhere"
+echo -e "\e[91m~: The key should be around the main folder somewhere, go peek at them both"
+
+initNextFiles

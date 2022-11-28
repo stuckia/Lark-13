@@ -125,7 +125,11 @@ do
     fi
 done
 
-
+chmod -rx level2/playLevel2.sh
+chmod -rx level3/playLevel3.sh
+chmod -rx level4/playLevel4.sh
+chmod -rx level5/playLevel5.sh
+chmod -rx finale.sh
 
 
 
