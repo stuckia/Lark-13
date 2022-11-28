@@ -13,7 +13,7 @@ Instructions: to start the game, type ". main.sh"
     * any text put between square braces is meant to be placeholder text
         for example: if instructed to type: cat [filename], the text "[filename]" should be replaced with the name of an existing file
 
-    * files may be changing as the game progresses, don't be affraid to re-read files or revisit game directories as you play
+    * files may be changing as the game progresses, don't be afraid to re-read files or revisit game directories as you play
 
     * while there is a certain order to finish the levels in, the numbers may not be in order
 
