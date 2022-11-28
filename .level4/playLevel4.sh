@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ "$FINISHED2" = "false" ]; then
+    echo "Error: Mr Game says that no one is allowed in"
+    echo
+    echo -e "\e[91m~: Let's try looking somewhere else"
+    return
+fi
+
 if [ -f "lock" -a -f "key" ]; then
     # dont rm the files since the player is going to need to play the level again
     #rm lock
@@ -21,12 +28,12 @@ if [ -f "lock" -a -f "key" ]; then
     echo
     echo -e "\e[91m~: Keep following the game while I tweak the level for you"
     sleep 1
-    echo
+    echo -e "\e[39m"
     echo
 else
     echo
     echo "Entry not permitted"
-    echo "Make sure your current directory (cd) is in the level4 folder"
+    echo "Level requires a key to be unlocked"
     return
 fi
 
@@ -40,7 +47,6 @@ do
     echo "I speak without a mouth and hear without ears"
     echo "I have no body but I come alive with wind"
     echo "What am I?"
-    sleep 1
     read -p "> " answer
     
     if [ "$answer" = "echo" ]; then
@@ -71,4 +77,5 @@ do
 
 done
 
+export FINISHED4=true
 chmod +rx ../level5/playLevel5.sh

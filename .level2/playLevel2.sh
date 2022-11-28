@@ -1,7 +1,11 @@
 #!/bin/bash
 
-
-
+if [ "$FINISHED6" = "false" ]; then
+    echo "Error: Mr Game says that no one is allowed in"
+    echo
+    echo -e "\e[91m~: Let's try looking somewhere else"
+    return
+fi
 #note for level 2, have user touch a file that the level looks for to say that they are done
 #after that, have Mr. Game get suspicios and remove some permissions
 # do something with cp/mv next
@@ -10,7 +14,7 @@ initNextFiles() {
     chmod +rx ../level4/playLevel4.sh
 
     touch ../key
-    echo "  XXXXXXXXXXXXXX" >> ../key
+    echo "  XXXXXXXXXXXXXX" > ../key
     echo "XX              XX" >> ../key
     echo "XX      XX      XX" >> ../key
     echo "XX              XX" >> ../key
@@ -24,7 +28,7 @@ initNextFiles() {
     echo "Instructions with lock" >> ../key
 
     touch ../level4/lock
-    echo "      XXXXXX" >> ../level4/lock
+    echo "      XXXXXX" > ../level4/lock
     echo "    XX      XX" >> ../level4/lock
     echo "    XX      XX" >> ../level4/lock
     echo "  XXXXXXXXXXXXXX" >> ../level4/lock
@@ -37,6 +41,7 @@ initNextFiles() {
     echo "Move key into this folder to unlock the level" >> ../level4/lock
     echo "mv [file] [new folder destination]" >> ../level4/lock
 }
+
 
 echo "
 Now for everyone's favorite passtime, MATH
@@ -82,7 +87,7 @@ do
         echo -e "\e[91m~: This is getting a little too close for comfort"
         echo -e "\e[91m~: I'm kicking you out of the level before it's too late"
         echo -e "\e[91m~: Make sure you read my note before you restart the level" 
-        echo "Ok, I've looked at the level2 code and I found something that can help us" >> note
+        echo "Ok, I've looked at the level2 code and I found something that can help us" > note
         echo "It looks like the program is looking for a file called \"tunnel\"" >> note
         echo "In order to do that, you're going to need to type: touch tunnel" >> note
         echo "That should create the file that we need to pass level2. Good luck" >> note
@@ -116,4 +121,127 @@ echo
 echo -e "\e[91m~: I faintly recall the next level containing a lock"
 echo -e "\e[91m~: The key should be around the main folder somewhere, go peek at them both"
 
+export FINISHED2=true
 initNextFiles
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# you're still trying this?

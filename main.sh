@@ -26,11 +26,11 @@ initFiles() {
     if [ ! -f note ]; then
         touch note
 
-        echo -e "\e[91m~: Glad you can find this, you're already doing better than Sandra ever did." >> note
-        echo -e "\e[91m~: Anyway, let's snoop around before Mr. Game knows what's going on" >> note
-        echo -e "\e[91m~: To look in different folders, try typing: cd [folder name]" >> note
-        echo -e "\e[91m~: If you want to come back out of a folder, type: cd .." >> note
-        echo -e "\e[91m~: Now that you know the cd and ls commands, lets look around for a clue to get out of here" >> note
+        echo "Glad you can find this, you're already doing better than Sandra ever did." > note
+        echo "Anyway, let's snoop around before Mr. Game knows what's going on" >> note
+        echo "To look in different folders, try typing: cd [folder name]" >> note
+        echo "If you want to come back out of a folder, type: cd .." >> note
+        echo "Now that you know the cd and ls commands, lets look around for a clue to get out of here" >> note
     fi
 
     for i in {2..7}
@@ -53,7 +53,11 @@ game() {
     done
 }
 
-./reset.sh
+. .reset.sh
+
+export FINISHED2=false
+export FINISHED4=false
+export FINISHED6=false
 
 # make part of the puzzle be that the user needs to find their own file and delete it
 # user must also change file of helper guy
@@ -129,7 +133,7 @@ chmod -rx level2/playLevel2.sh
 chmod -rx level3/playLevel3.sh
 chmod -rx level4/playLevel4.sh
 chmod -rx level5/playLevel5.sh
-chmod -rx finale.sh
+chmod -rx .finale.sh
 
 
 

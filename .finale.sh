@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -f .TrappedUsers/"Abby.player" ]; then
+if [ -f .TrappedUsers/"$UNAME.player" ]; then
     echo -e "\e[91m~: You're running out of time!"
     echo -e "\e[91m~: Make sure you delete your player file so you can escape!"
     return
@@ -18,4 +18,115 @@ echo
 echo
 echo "LARK GAME COMPLETED!"
 
-. reset.sh
+. .reset.sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# dont expect any hints from me
