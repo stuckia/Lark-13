@@ -9,21 +9,14 @@
 # always reset before pushing changes 
 #unset cd
 
+for i in {2..6}
+do
+    unset "FINISHED$i"
+done
+
 if [ -d TrappedUsers ]; then 
     mv TrappedUsers .TrappedUsers
 fi
-
-if [ -f note ]; then
-    rm note
-fi
-
-for i in {2..7}
-do
-    if [ -d "level$i" ]; then 
-        mv "level$i" ".level$i"
-    fi
-done
-
 
 for i in .TrappedUsers/*.player 
 do
@@ -35,6 +28,12 @@ do
 done
 
 
+for i in {2..6}
+do
+    if [ -d "level$i" ]; then 
+        mv "level$i" ".level$i"
+    fi
+done
 
 if [ -f .level6/note ]; then 
     echo "I'm glad you could find my next note" > .level6/note
@@ -42,6 +41,10 @@ if [ -f .level6/note ]; then
     echo "Maybe we can figure out a way to filter the text and look for some kind of password or key" >> .level6/note
     echo >> .level6/note
     echo "Dont forget: you can run any .sh file by typing: . [filename]" >> .level6/note
+fi
+
+if [ -f note ]; then
+    rm note
 fi
 
 if [ -f .level2/note ]; then 
@@ -56,10 +59,18 @@ if [ -f .level4/key ]; then
     rm .level4/key
 fi
 
+if [ -f key ]; then
+    rm key
+fi
+
 if [ -f .level4/lock ]; then 
     rm .level4/lock
 fi
 
 if [ -f .level4/riddle ]; then 
     rm .level4/riddle
+fi
+
+if [ -f finale.sh ]; then
+    mv finale.sh .finale.sh
 fi

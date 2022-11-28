@@ -1,7 +1,15 @@
 #!/bin/bash
 
+if [ "$FINISHED4" = "false" ]; then
+    echo "Error: Mr Game says that no one is allowed in"
+    echo
+    echo -e "\e[91m~: Let's try looking somewhere else"
+    return
+fi
+
 initNextFiles() {
     cd ..
+    mv .finale.sh finale.sh
     chmod +rx finale.sh
 }
 
@@ -46,7 +54,8 @@ sleep 1
 echo
 echo
 echo -e "\e[91m~: Did you hear the game mention the trapped users folder and your own player file stuck within?"
-echo -e "\e[91m~: I've taught you everything I could with what little time we could sneak"
+echo -e "\e[91m~: The only command left to teach you is rm"
+echo -e "\e[91m~: To delete a file, you have to type: rm [filename]"
 echo
 echo
 sleep 1
@@ -56,3 +65,114 @@ echo -e "\e[91m~: When you finish that, run the finale.sh script and free yourse
 echo -e "\e[91m~: You can do this!"
 
 initNextFiles
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# oops, no peaking

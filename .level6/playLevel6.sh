@@ -1,10 +1,10 @@
 #!/bin/bash
 
 initNextFiles() {
-    chmod +rx ../level2/playLevel2.sh
-    touch ../level2/note
-    echo "This looks like a good place to try next" >> ../level2/note
-    echo "Try playing the level, and while Mr. Game is distracted, I'll snoop around in the code" >> ../level2/note
+    chmod +rx level2/playLevel2.sh
+    touch level2/note
+    echo "This looks like a good place to try next" >> level2/note
+    echo "Try playing the level, and while Mr. Game is distracted, I'll snoop around in the code" >> level2/note
 }
 
 while :
@@ -41,6 +41,7 @@ echo -e "\e[91m~: Trust me, the only way you can get out of here is by hacking e
 echo -e "\e[91m~: Let's try and find the next clue"
 echo -e "\e[91m~: Don't forget to use the cd, ls, and cat commands to make your way around"
 
+export FINISHED6=true
 cd ..
 initNextFiles
 
