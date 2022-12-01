@@ -1,18 +1,41 @@
 #!/bin/bash
 
-if [ "$FINISHED2" = "false" ]; then
-    echo "Error: Mr Game says that no one is allowed in"
-    echo
-    echo -e "\e[91m~: Let's try looking somewhere else"
-    return
+initNextFiles() {
+    if [ ! -f ../level3/note ]; then
+        touch ../level3/note
+        echo "Another lock? You'd think Mr. Game would be more creative" > ../level3/note 
+        echo "I guess you've managed to make a key before, why not try again" >> ../level3/note
+    fi
+}
+
+touch() {
+            if [ $(basename `pwd`) = "level3" ]; then
+                    echo "Mr Game: What do you think you're doing?"
+                    echo "Mr Game: You will never be allowed to make a key here"
+                    echo
+                    echo -e "\e[91m~: Well that doesn't seem to work"
+                    echo -e "\e[91m~: I wonder if we can destroy the lock"
+                    echo -e "\e[91m~: The rm command should be able to delete files, try using it like: rm [filename]"
+                    echo -e "\e[39m"
+
+                    echo "Maybe we should try to remove the lock with: rm [filename]" > note
+                    
+            else
+                echo > $1
+            fi
+        }
+
+
+
+if [ -z ${FIRST_TIME+x} ]; then
+    FIRST_TIME=true
 fi
 
 if [ -f "lock" -a -f "key" ]; then
-    # dont rm the files since the player is going to need to play the level again
-    #rm lock
-    #rm key
+    
     touch riddle
     chmod -r riddle
+    rm key
 
     echo "I speak without a mouth and hear without ears" > riddle
     echo "I have no body but I come alive with wind" >> riddle
@@ -20,16 +43,21 @@ if [ -f "lock" -a -f "key" ]; then
     echo "echo" >> riddle
 
     echo
+    echo "One time key used, new key required to replay"
+    echo 
     echo "Mr Game: Welcome back to my game."
     echo "Mr Game: I can't remember how you managed to pass the previous level"
     echo "Mr Game: But I suppose that doesn't matter since you're here now"
-    sleep 1
     echo
-    echo
-    echo -e "\e[91m~: Keep following the game while I tweak the level for you"
-    sleep 1
-    echo -e "\e[39m"
-    echo
+
+    if [ "$FIRST_TIME" = "true" ]; then
+        sleep 1
+        echo
+        echo
+        echo -e "\e[91m~: Keep following the game while I tweak the level for you"
+        echo -e "\e[39m"
+        echo
+    fi
 else
     echo
     echo "Entry not permitted"
@@ -52,18 +80,18 @@ do
     if [ "$answer" = "echo" ]; then
         echo
         echo
-        echo "Congratulations, you passed!"
-        echo "Level4 complete, level5 now unlocked"
+        echo "Congratulations, you solved the riddle!"
+        echo "Level4 complete"
         break
     elif [ $count -eq 3 ]; then
         echo
         echo
-        echo -e "\e[91m~: I found the answer, let me help you out"
-        echo -e "\e[91m~: It seems there is a file named riddle in the level4 folder"
+        echo -e "\e[91m~: I found the answer, but it looks like our key is gone"
+        echo -e "\e[91m~: I found a file named riddle in the level4 folder"
         echo -e "\e[91m~: The file is locked right now, but maybe you can change the permissions to peek at the answer"
         echo -e "\e[91m~: Try using the following command to allow reading permissions: chmod +r [file]"
         echo -e "\e[91m~: I'll kick you out of the level so you can look at it"
-        echo -e "\e[91m~: Remember that you can open the contents of the file using cat"
+        echo -e "\e[91m~: Remember that you'll need to make a new key"
         break
     else
         echo "Sorry, that was incorrect"
@@ -77,5 +105,103 @@ do
 
 done
 
-export FINISHED4=true
-chmod +rx ../level5/playLevel5.sh
+FIRST_TIME=false
+chmod +rx ../level3/playLevel3.sh
+echo -e "\e[39m"
+initNextFiles
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# no peeking at this script either

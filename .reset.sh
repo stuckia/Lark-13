@@ -1,23 +1,6 @@
 #!/bin/bash
 
 
-# finally, put this in main instaed
-#make sure to unset cd in reset file
-
-# use this temporarily to eset all the files, folders that are created when playing
-# remember to add to this when working on new parts of the story
-# always reset before pushing changes 
-#unset cd
-
-for i in {2..6}
-do
-    unset "FINISHED$i"
-done
-
-if [ -d TrappedUsers ]; then 
-    mv TrappedUsers .TrappedUsers
-fi
-
 for i in .TrappedUsers/*.player 
 do
     if [ $i = ".TrappedUsers/Bob.player" -o $i = ".TrappedUsers/Sandra.player" -o $i = ".TrappedUsers/Carl.player" -o $i = ".TrappedUsers/Kristie.player" ]; then
@@ -69,6 +52,25 @@ fi
 
 if [ -f .level4/riddle ]; then 
     rm .level4/riddle
+fi
+
+if [ -f .level3/note ]; then
+    rm .level3/note
+fi
+
+if [ ! -f .level3/lock ]; then
+    touch .level3/lock
+    echo "      XXXXXX" > .level3/lock
+    echo "    XX      XX" >> .level3/lock
+    echo "    XX      XX" >> .level3/lock
+    echo "  XXXXXXXXXXXXXX" >> .level3/lock
+    echo "XX              XX" >> .level3/lock
+    echo "XX              XX" >> .level3/lock
+    echo "XX              XX" >> .level3/lock
+    echo "XX              XX" >> .level3/lock
+    echo "  XXXXXXXXXXXXXX" >> .level3/lock
+    echo >> .level3/lock
+    echo "Looks like a lock, but there is nowhere to put a key" >> .level3/lock
 fi
 
 if [ -f finale.sh ]; then

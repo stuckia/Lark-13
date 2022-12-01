@@ -1,14 +1,5 @@
 #!/bin/bash
 
-if [ "$FINISHED6" = "false" ]; then
-    echo "Error: Mr Game says that no one is allowed in"
-    echo
-    echo -e "\e[91m~: Let's try looking somewhere else"
-    return
-fi
-#note for level 2, have user touch a file that the level looks for to say that they are done
-#after that, have Mr. Game get suspicios and remove some permissions
-# do something with cp/mv next
 
 initNextFiles() {
     chmod +rx ../level4/playLevel4.sh
@@ -86,7 +77,8 @@ do
         echo
         echo -e "\e[91m~: This is getting a little too close for comfort"
         echo -e "\e[91m~: I'm kicking you out of the level before it's too late"
-        echo -e "\e[91m~: Make sure you read my note before you restart the level" 
+        echo -e "\e[91m~: Make sure you read my new note before you restart the level" 
+
         echo "Ok, I've looked at the level2 code and I found something that can help us" > note
         echo "It looks like the program is looking for a file called \"tunnel\"" >> note
         echo "In order to do that, you're going to need to type: touch tunnel" >> note
@@ -99,30 +91,34 @@ done
 sleep 1
 echo "Tunnel discovered"
 
-#needs to be worked on to actually go to the correct directory
-sleep 1
-echo -e "\e[91m~: Great job, let's just follow the tunnel"
-echo -e "\e[91m~: As long as were out of here, that's all I care about"
 cd ../.TrappedUsers
-sleep 1
-echo -e "\e[91m~: Man, what is this directory, I've never seen it listed with ls"
-echo -e "\e[91m~: This will probably be important later, for now let's try completing another level"
 
-sleep 1
-echo 
-echo
-echo -e "\e[39mMr Game: Hey! I dont know how you got here but you need to leave now"
-echo 
-echo
-sleep 1
-echo -e "\e[91m~: I think for now he's right, we can always come back here later"
-echo -e "\e[91m~: Let's cd to get back to the main folder"
-echo
-echo -e "\e[91m~: I faintly recall the next level containing a lock"
-echo -e "\e[91m~: The key should be around the main folder somewhere, go peek at them both"
+if [ "$DIALOGUE" = "true" ]; then
+    sleep 1
+    echo -e "\e[91m~: Great job, let's just follow the tunnel"
+    echo -e "\e[91m~: As long as were out of here, that's all I care about"
 
-export FINISHED2=true
+    sleep 1
+    echo -e "\e[91m~: Man, what is this directory, I've never seen it listed with ls"
+    echo -e "\e[91m~: This will probably be important later, for now let's try completing another level"
+
+    sleep 1
+    echo 
+    echo
+    echo -e "\e[39mMr Game: Hey! I dont know how you got here but you need to leave now"
+    echo 
+    echo
+    sleep 1
+    echo -e "\e[91m~: I think for now he's right, we can always come back here later"
+    echo -e "\e[91m~: Let's cd to get back to the main folder"
+    echo
+    echo -e "\e[91m~: I faintly recall the next level containing a lock"
+    echo -e "\e[91m~: The key should be around the main folder somewhere, go peek at them both"
+fi
+
 initNextFiles
+echo -e "\e[39m"
+
 
 
 
