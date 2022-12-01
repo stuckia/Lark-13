@@ -15,8 +15,6 @@ do
     if [ "$REPLY" = "exit" ]; then
         return
     elif [ $REPLY = "cookies" ]; then
-        # in here change the main note to something else
-        # maybe chage the name of that note to indicate its updated
         if [ -f note ]; then 
             echo "Dont forget: you can run any .sh file by typing: . [filename]" > note
         fi
@@ -41,9 +39,10 @@ echo -e "\e[91m~: Trust me, the only way you can get out of here is by hacking e
 echo -e "\e[91m~: Let's try and find the next clue"
 echo -e "\e[91m~: Don't forget to use the cd, ls, and cat commands to make your way around"
 
-export FINISHED6=true
 cd ..
 initNextFiles
+echo -e "\e[39m"
+
 
 
 

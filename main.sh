@@ -1,8 +1,9 @@
 #!/bin/bash
 
-# consider this to make sure user cannot cd out of game
-# game will only ever be one folder deep, so cd .. will bring them back to main game
-# also add a check if they do cd in the main game to not do anything
+# command to fix scripts is: sed -i 's/\r$//' [file]
+# in case of issue, needs to be run on all script files (main, finale, reset, and level scripts)
+
+
 cd() { 
     if [ $# -eq 0 -o "$1" = ".." ]; then 
         if [ $(basename `pwd`) = "Lark-13" ]; then
@@ -19,6 +20,7 @@ cd() {
 
 exit() {
     echo "Great try, but you cant exit out of the game that easily"
+    echo "Escape is a lie"
 }
 
 initFiles() {
@@ -42,6 +44,17 @@ initFiles() {
 
     if [ ! -f ".TrappedUsers/$UNAME.player" ]; then
         touch ".TrappedUsers/$UNAME.player"
+        echo " Player Info 
+{
+    Name: $UNAME
+    Age: Unknown
+    Lives: Unknown
+    Status: In Progress
+    Reasoning: n/a
+    Will Be Released: n/a 
+}
+            " > .TrappedUsers/$UNAME.player
+
     fi
 }
 
@@ -55,32 +68,41 @@ game() {
 
 . .reset.sh
 
-export FINISHED2=false
-export FINISHED4=false
-export FINISHED6=false
+export DIALOGUE=true
 
-# make part of the puzzle be that the user needs to find their own file and delete it
-# user must also change file of helper guy
-# that will teach rm or maybe mv to rename file
-# keep TrappedSecrets locked until they learn chmod
-# maybe have a script somewhere in .secrets so user has to cp script to another locaition
-# that other location could be a level up in the directory so the user has to do ../
 
 echo "Before anything, I'd like to know your name:"
 read -p "> "
 export UNAME=$REPLY
 
-echo "
-*********************************************
-    WELCOME TO [COOL NAME] GAME!
+if [ "$COLUMNS" -lt 125 ]; then
+    $COLUMNS=125
+fi
 
-    your one stop shop for fun
-*********************************************
+cat << EOF 
+
+
+**************************************************************************************************************************
+|                                                                                                                        |
+|     _____                                                         _____  _               _             _               |
+|    |  __ \                                             ___       |  __ \(_)             | |           (_)              |
+|    | |  | |_   _ _ __   __ _  ___  ___  _ __  ___     ( _ )      | |  | |_ _ __ ___  ___| |_ ___  _ __ _  ___  ___     |
+|    | |  | | | | | '_ \ / _  |/ _ \/ _ \| '_ \/ __|    / _ \/\    | |  | | | '__/ _ \/ __| __/ _ \| '__| |/ _ \/ __|    |
+|    | |__| | |_| | | | | (_| |  __/ (_) | | | \__ \   | (_>  <    | |__| | | | |  __/ (__| || (_) | |  | |  __/\__ \    |
+|    |_____/ \__,_|_| |_|\__, |\___|\___/|_| |_|___/    \___/\/    |_____/|_|_|  \___|\___|\__\___/|_|  |_|\___||___/    |
+|                         __/ |                                                                                          |
+|                        |___/                                                                                           |
+|                                                                                                                        |
+|                                                                                                                        |
+|            your one stop shop for fun                                                                                  |
+|                                                                                                                        |
+**************************************************************************************************************************
 
 Are you ready to play?
     1. Yes
     2. Of course
-"
+
+EOF
 
 read -p "> " -n 1
 
@@ -134,6 +156,8 @@ chmod -rx level3/playLevel3.sh
 chmod -rx level4/playLevel4.sh
 chmod -rx level5/playLevel5.sh
 chmod -rx .finale.sh
+
+echo -e "\e[39m"
 
 
 
