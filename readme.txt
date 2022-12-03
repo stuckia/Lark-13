@@ -1,4 +1,3 @@
-# Lark-13
 Welcome to LARK
 >>>>>>>the Linux Activity to Reinforce Knowledge
 

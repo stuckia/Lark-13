@@ -2,7 +2,10 @@
 
 initNextFiles() {
     if [ ! -f ../level3/note ]; then
+        chmod +w ../level3
+        chmod +rx ../level3/playLevel3.sh
         touch ../level3/note
+
         echo "Another lock? You'd think Mr. Game would be more creative" > ../level3/note 
         echo "I guess you've managed to make a key before, why not try again" >> ../level3/note
     fi
@@ -11,7 +14,7 @@ initNextFiles() {
 touch() {
             if [ $(basename `pwd`) = "level3" ]; then
                     echo "Mr Game: What do you think you're doing?"
-                    echo "Mr Game: You will never be allowed to make a key here"
+                    echo "Mr Game: Making a new key won't help you here"
                     echo
                     echo -e "\e[91m~: Well that doesn't seem to work"
                     echo -e "\e[91m~: I wonder if we can destroy the lock"
@@ -82,6 +85,7 @@ do
         echo
         echo "Congratulations, you solved the riddle!"
         echo "Level4 complete"
+        initNextFiles
         break
     elif [ $count -eq 3 ]; then
         echo
@@ -106,9 +110,7 @@ do
 done
 
 FIRST_TIME=false
-chmod +rx ../level3/playLevel3.sh
 echo -e "\e[39m"
-initNextFiles
 
 
 

@@ -75,9 +75,16 @@ echo "Before anything, I'd like to know your name:"
 read -p "> "
 export UNAME=$REPLY
 
-if [ "$COLUMNS" -lt 125 ]; then
-    $COLUMNS=125
+if [ $COLUMNS -lt 125 ]; then 
+    echo "For proper line spacing, we recommend increasing the window width"
+    echo "Execution will resume once the screen size is large enough"
+    while [ `tput cols` -lt 125 ]
+    do 
+        continue
+    done
 fi
+
+clear
 
 cat << EOF 
 
@@ -156,6 +163,15 @@ chmod -rx level3/playLevel3.sh
 chmod -rx level4/playLevel4.sh
 chmod -rx level5/playLevel5.sh
 chmod -rx .finale.sh
+chmod -w level2 
+chmod -w level3
+chmod -w level4
+chmod -w level5
+chmod -w level6 
+chmod -w .TrappedUsers
+
+
+
 
 echo -e "\e[39m"
 
