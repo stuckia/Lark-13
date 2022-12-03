@@ -3,6 +3,8 @@
 
 initNextFiles() {
     chmod +rx ../level4/playLevel4.sh
+    chmod +w ../level4
+
 
     touch ../key
     echo "  XXXXXXXXXXXXXX" > ../key
@@ -78,11 +80,13 @@ do
         echo -e "\e[91m~: This is getting a little too close for comfort"
         echo -e "\e[91m~: I'm kicking you out of the level before it's too late"
         echo -e "\e[91m~: Make sure you read my new note before you restart the level" 
+        echo -e "\e[39m"
 
         echo "Ok, I've looked at the level2 code and I found something that can help us" > note
         echo "It looks like the program is looking for a file called \"tunnel\"" >> note
-        echo "In order to do that, you're going to need to type: touch tunnel" >> note
-        echo "That should create the file that we need to pass level2. Good luck" >> note
+        echo "In order to create a file, you're going to need to type: touch [filename]" >> note
+        echo "Touching a tunnel should create the file that we need to pass level2. Good luck" >> note
+
         return
     fi
 

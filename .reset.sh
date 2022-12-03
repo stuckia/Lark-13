@@ -3,7 +3,7 @@
 
 for i in .TrappedUsers/*.player 
 do
-    if [ $i = ".TrappedUsers/Bob.player" -o $i = ".TrappedUsers/Sandra.player" -o $i = ".TrappedUsers/Carl.player" -o $i = ".TrappedUsers/Kristie.player" ]; then
+    if [ $i = ".TrappedUsers/Bob.player" -o $i = ".TrappedUsers/Sandra.player" -o $i = ".TrappedUsers/Carl.player" -o $i = ".TrappedUsers/Kristie.player" -o $i = ".TrappedUsers/Tony.player" ]; then
         continue
     else 
         rm $i
@@ -75,4 +75,8 @@ fi
 
 if [ -f finale.sh ]; then
     mv finale.sh .finale.sh
+fi
+
+if [ ! -f main.sh ]; then
+    mv .main.sh main.sh
 fi

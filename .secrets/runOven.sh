@@ -3,7 +3,7 @@
 read -p "Enter the oven password: "
 
 if [ "$REPLY" = "ding" ]; then
-    echo "Starting the oven"
+    echo "Starting virtual oven"
     sleep 1
     echo "Oven heat at 100 degrees"
     sleep 1

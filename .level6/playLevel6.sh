@@ -2,6 +2,8 @@
 
 initNextFiles() {
     chmod +rx level2/playLevel2.sh
+    chmod +w level2
+
     touch level2/note
     echo "This looks like a good place to try next" >> level2/note
     echo "Try playing the level, and while Mr. Game is distracted, I'll snoop around in the code" >> level2/note
