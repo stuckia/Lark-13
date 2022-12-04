@@ -6,7 +6,7 @@
 
 cd() { 
     if [ $# -eq 0 -o "$1" = ".." ]; then 
-        if [ $(basename `pwd`) = "Lark-13" ]; then
+        if [ $(basename `pwd`) = "Dungeons-And-Directories-Lark13" ]; then
             return
         fi
     fi
@@ -155,6 +155,7 @@ do
         game
         echo -e "\e[91m~: I cant believe you're still playing"
         echo -e "\e[91m~: In case you missed it, you'll be here forever unless you type exit"
+        echo -e "\e[39m"
     fi
 done
 
